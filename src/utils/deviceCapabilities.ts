@@ -72,15 +72,16 @@ export async function checkGpuSupport(): Promise<GpuCapabilities> {
       const hasAdreno = gpuInfo.hasAdreno ?? false;
       const hasI8mm = cpuInfo.hasI8mm ?? false;
       const hasDotProd = cpuInfo.hasDotProd ?? false;
+      const hasMali = gpuInfo.hasMali ?? false;
 
-      // All three conditions must be met for OpenCL support
-      const isSupported = hasAdreno && hasI8mm && hasDotProd;
+      // All three conditions must be met for OpenCL support on Adreno, or just Mali GPU
+      const isSupported = (hasAdreno && hasI8mm && hasDotProd) || hasMali;
 
       let reason: GpuCapabilities['reason'];
       if (!isSupported) {
-        if (!hasAdreno) {
+        if (!hasAdreno && !hasMali) {
           reason = 'no_adreno';
-        } else if (!hasI8mm || !hasDotProd) {
+        } else if (hasAdreno && (!hasI8mm || !hasDotProd)) {
           reason = 'missing_cpu_features';
         } else {
           reason = 'unknown';

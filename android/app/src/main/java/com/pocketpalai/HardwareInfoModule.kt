@@ -112,7 +112,7 @@ class HardwareInfoModule(reactContext: ReactApplicationContext) :
       // Note: OpenCL support requires Adreno GPU AND both i8mm and dotprod CPU features
       // This is a requirement from llama.rn builds
       // The actual check is done in JavaScript by combining GPU info with CPU info
-      gpuInfo.putBoolean("supportsOpenCL", hasAdreno) // Partial check - CPU features checked separately
+      gpuInfo.putBoolean("supportsOpenCL", hasAdreno || hasMali) // Partial check - CPU features checked separately
 
       // Determine GPU type string
       val gpuType = when {

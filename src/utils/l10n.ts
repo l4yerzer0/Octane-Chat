@@ -43,11 +43,11 @@ export const l10n = {
       // OpenCL Settings
       openCL: 'OpenCL (Experimental)',
       openCLDescription:
-        'GPU acceleration for Adreno GPUs. Faster prompt processing, but generation may not always be faster.',
+        'GPU acceleration for Adreno and Mali GPUs. Faster prompt processing, but generation may not always be faster.',
       openCLNotAvailable:
-        'OpenCL is not available on this device. Requires Adreno GPU with i8mm and dotprod CPU features.',
+        'OpenCL is not available on this device. Requires Adreno (with i8mm/dotprod) or Mali GPU.',
       openCLMissingCPUFeatures:
-        'OpenCL requires i8mm and dotprod CPU features, which are not available on this device.',
+        'OpenCL on Adreno requires i8mm and dotprod CPU features.',
       openCLQuantizationNote:
         'Note: Pure Q4_0 quantized models perform best with OpenCL.',
       openCLDocsLink: 'See llama.cpp OpenCL docs for details.',
@@ -1331,11 +1331,11 @@ export const l10n = {
       // OpenCL Settings
       openCL: 'OpenCL（実験的）',
       openCLDescription:
-        'Adreno GPU向けのGPU加速。プロンプト処理は高速化されますが、生成速度は必ずしも速くなりません。',
+        'AdrenoおよびMali GPU向けのGPU加速。プロンプト処理は高速化されますが、生成速度は必ずしも速くなりません。',
       openCLNotAvailable:
-        'このデバイスではOpenCLを利用できません。i8mmとdotprodのCPU機能を備えたAdreno GPUが必要です。',
+        'このデバイスではOpenCLを利用できません。i8mm/dotprodを備えたAdreno、またはMali GPUが必要です。',
       openCLMissingCPUFeatures:
-        'OpenCLにはi8mmとdotprodのCPU機能が必要ですが、このデバイスでは利用できません。',
+        'AdrenoでのOpenCLにはi8mmとdotprodのCPU機能が必要です。',
       openCLQuantizationNote:
         '注：純粋なQ4_0量子化モデルがOpenCLで最高のパフォーマンスを発揮します。',
       openCLDocsLink: '詳細はllama.cpp OpenCLドキュメントをご覧ください。',
@@ -2626,11 +2626,11 @@ export const l10n = {
       // OpenCL Settings
       openCL: 'OpenCL（实验性）',
       openCLDescription:
-        'Adreno GPU的GPU加速。提示处理更快，但生成速度不一定更快。',
+        'Adreno和Mali GPU的GPU加速。提示处理更快，但生成速度不一定更快。',
       openCLNotAvailable:
-        '此设备不支持OpenCL。需要具有i8mm和dotprod CPU功能的Adreno GPU。',
+        '此设备不支持OpenCL。需要具有i8mm/dotprod的Adreno GPU或Mali GPU。',
       openCLMissingCPUFeatures:
-        'OpenCL需要i8mm和dotprod CPU功能，但此设备不支持。',
+        '在Adreno上使用OpenCL需要i8mm和dotprod CPU功能。',
       openCLQuantizationNote: '注意：纯Q4_0量化模型在OpenCL上性能最佳。',
       openCLDocsLink: '详情请参阅llama.cpp OpenCL文档。',
       layersOnGPU: 'GPU层数：{{gpuLayers}}',
